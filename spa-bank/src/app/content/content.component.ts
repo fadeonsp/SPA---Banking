@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as Typed from 'typed.js';
 
 @Component({
@@ -8,7 +9,7 @@ import * as Typed from 'typed.js';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     //constante de configuração
@@ -27,5 +28,8 @@ export class ContentComponent implements OnInit {
    const typed = new Typed('.typing-element', options);
   }
 
+gotoCadastroClientes() {
+ this.router.navigate(['cadastro-clientes'])
+}
 
 }
